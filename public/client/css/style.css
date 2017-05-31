@@ -49,3 +49,25 @@ h1 { font-size: 1.5em; margin: 10px; }
   width: 30px;
   height: 30px;
 }
+
+.btngoogle {
+	background: white;
+	border-radius: 40px;
+	color: #FFFFFF;
+	height: 50px;
+	width: 50px;
+}
+
+.imggoogle {
+  width: 35px;
+  height: 35px;
+}
+
+.btnfacebook {
+	background: white;
+	border-radius: 40px;
+	color: #FFFFFF;
+	height: 50px;
+	width: 50px;
+	margin-top: 10px;
+}

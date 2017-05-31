@@ -38,10 +38,52 @@ app.factory('HomeService', function ($http, apis) {
         });
     };
 
+    var getBrands = () => {
+        return $http({
+            method: 'GET',
+            url: '/api/brand'
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    };
+
+    var getProductNew = (offset) => {
+        return $http({
+            method: 'GET',
+            url: '/api/productnew',
+            params: {
+                offset: offset
+            }
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    };
+
+    var getProductBestseller = (offset) => {
+        return $http({
+            method: 'GET',
+            url: '/api/productbestseller',
+            params: {
+                offset: offset
+            }
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    };
+
     return {
         getCategories: getCategories,
         getProductTypebycategoryId: getProductTypebycategoryId,
-        getProductFreature: getProductFreature
+        getProductFreature: getProductFreature,
+        getBrands: getBrands,
+        getProductNew: getProductNew,
+        getProductBestseller: getProductBestseller
     };
 });
 

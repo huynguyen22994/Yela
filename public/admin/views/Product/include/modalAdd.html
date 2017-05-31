@@ -18,6 +18,10 @@
 			<select id="job" ng-model="selectedProductType" ng-options="productType.name for productType in productTypes">
 				<option value="">-- Chọn Loại Sản Phẩm --</option>
 			</select>   
+			<label>Nhãn Hiệu:</label>
+			<select id="job" ng-model="selectedBrand" ng-options="brand.name for brand in brands">
+				<option value="">-- Chọn Nhãn Hiệu --</option>
+			</select> 
 		  <label>Ảnh Sản Phẩm:</label>
 		  <!-- Drop Image -->
 			<div class="button btn-danger" ngf-select="getImgeUpload($files)" ngf-multiple="false">Chọn..</div>
@@ -34,18 +38,19 @@
 				<b>{{process}}%</b>
 				<pre><img src="/images/loading/process.jpg" width="{{process}}%" height="10px" /></pre>
 			</div>
-		  <div class="h4">Discribe:</div>
-			<form name="ckeditor">
+		  <div class="h4">Mô Tả:</div>
+			<div ckeditor="options" ng-model="newProduct.discribe"></div>
+			<!--<form name="ckeditor">
 				<textarea name="editor1" id="editor1" rows="10" cols="80" ng-model="newProduct.discribe"></textarea>
 				<script>
 					// Replace the textarea id="editor1" with a CKEditor
 					// instance, using default configuration.
 					CKEDITOR.replace( 'editor1' );
 				</script>
-			</form>
+			</form>-->
         </div>
         <div class="modal-footer">
-		  <button type="button" class="btn btn-primary" ng-click="createProduct(selectedProductType)" data-dismiss="modal">Add</button>
+		  <button type="button" class="btn btn-primary" ng-click="createProduct(selectedProductType, selectedBrand)" data-dismiss="modal">Add</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>

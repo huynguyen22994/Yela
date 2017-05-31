@@ -29,7 +29,8 @@ module.exports.createProduct = (req, res, next) => {
             discribe: product.discribe,
             productTypeId: product.productTypeId,
             productStatus: product.productStatus,
-            quantity: product.quantity
+            quantity: product.quantity,
+            brandId: product.brandId
         }).then((result) => {
             res.end("insert success");
         }, (err) => {
@@ -162,3 +163,37 @@ module.exports.getProductFreature = (req, res, next) => {
         res.end();
     });
 };
+
+module.exports.getProductNew = (req, res, next) => {
+    var offset = parseInt(req.query.offset);
+    models.Product.findAndCountAll({
+    where: {
+        productStatus: 'new'
+    },
+    offset: offset,
+    limit: 3
+    })
+    .then((result) => {
+        res.end(JSON.stringify(result));
+    }, (err) => {
+        res.statusCode = 400;
+        res.end();
+    });
+};
+
+module.exports.getProductBestseller = (req, res, next) => {
+    var offset = parseInt(req.query.offset);
+    models.Product.findAndCountAll({
+    where: {
+        productStatus: 'bestseller'
+    },
+    offset: offset,
+    limit: 3
+    })
+    .then((result) => {
+        res.end(JSON.stringify(result));
+    }, (err) => {
+        res.statusCode = 400;
+        res.end();
+    });
+}

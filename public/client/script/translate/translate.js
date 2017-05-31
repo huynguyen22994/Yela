@@ -51,7 +51,8 @@ app.config(['$translateProvider', function ($translateProvider) {
     'LABEL_AUTHEN_CODE': 'Please go to your Email account for a validation code!',
     'AUTHEN_CODE': 'Verification code',
     'ERROR_MAIL_EXIST': 'Email already exists',
-    'ERROR_EMAIL_INCORRECT': 'Email is incorrect' 
+    'ERROR_EMAIL_INCORRECT': 'Email is incorrect',
+    'NEW_PRODUCT': 'New Product'
   });
  
   $translateProvider.translations('vi', {
@@ -106,7 +107,8 @@ app.config(['$translateProvider', function ($translateProvider) {
     'LABEL_AUTHEN_CODE': 'Vui lòng vào tài khoản Email để lấy mã xác thực!',
     'AUTHEN_CODE': 'Mã xác thực',
     'ERROR_MAIL_EXIST': 'Email đã tồn tại',
-    'ERROR_EMAIL_INCORRECT': 'Email không đúng' 
+    'ERROR_EMAIL_INCORRECT': 'Email không đúng',
+    'NEW_PRODUCT': 'Sản Phẩm Mới'
   });
  
   $translateProvider.preferredLanguage('vi');

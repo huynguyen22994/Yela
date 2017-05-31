@@ -1,4 +1,4 @@
-app.controller('ProductAdminCtrl', function($scope, $timeout, ProductService, UploadFile, config, ProductTypeService, $q){
+app.controller('ProductAdminCtrl', function($scope, $timeout, ProductService, UploadFile, config, ProductTypeService, $q, BrandService){
 
     $scope.isImgName = false;
     $scope.isUpload = false;
@@ -18,13 +18,21 @@ app.controller('ProductAdminCtrl', function($scope, $timeout, ProductService, Up
             { value: 'old', name: 'Củ' },
             { value: 'normal', name: 'Bình Thường' },
             { value: 'bestseller', name: 'Bán Chạy Nhất' },
-            { value: 'prominentest', name: 'Nổi Bật Nhất'},
+            { value: 'prominentest', name: 'Nổi Bật Nhất' },
         ]
-    }
+    };
+
+    // Editor options.
+    $scope.options = {
+        language: 'en',
+        allowedContent: true,
+        entities: false
+    };
 
     $scope.initialization = () => {
         $scope.loadProducts();
         $scope.loadProductTypes();
+        $scope.loadBrands();
     };
 
     $scope.loadProducts = () => {
@@ -42,19 +50,28 @@ app.controller('ProductAdminCtrl', function($scope, $timeout, ProductService, Up
             console.log(err);
         });
     };
+
+    $scope.loadBrands = () => {
+        BrandService.getBrands().then((res) => {
+            $scope.brands = res.data;
+        }, (err) => {
+            console.log(err);
+        });
+    };
     
-    $scope.createProduct = (selectedProductType) => {
+    $scope.createProduct = (selectedProductType, selectedBrand) => {
         $scope.newProduct.productTypeId = selectedProductType.productTypeId;
         $scope.newProduct.productStatus = $scope.productStatus.model;
+        $scope.newProduct.brandId = selectedBrand.brandId;
         if ($scope.newProduct) {
             let promise = $q((resolve, reject) => {
                 $scope.upload($scope.imageUpload, $scope.optionEnum.upload, resolve, reject);
             });
 
             promise.then((data) => {
-                console.log(data);
                 ProductService.createProduct($scope.newProduct)
-                .then((res) => {
+                    .then((res) => {
+                    $scope.newProduct = {};
                     $scope.loadProducts();
                 }, (err) => {
 

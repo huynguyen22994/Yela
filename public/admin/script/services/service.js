@@ -230,6 +230,24 @@ app.factory('ProductTypeService', function ($http, apis) {
     }
 });
 
+app.factory('BrandService', function ($http, apis) {
+
+    var getBrands = () => {
+        return $http({
+            method: 'GET',
+            url: apis.getBrands
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    };
+
+    return {
+        getBrands: getBrands
+    }
+});
+
 app.factory('UploadFile', function ($http, apis, Upload) {
 
     var uploadProductImg = (file) => {

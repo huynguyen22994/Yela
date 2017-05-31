@@ -78,3 +78,10 @@ models.sequelize.query('ALTER TABLE producttypes ADD CONSTRAINT FK_ProductTypeCa
   }, (err) => {
     console.log(err);
   });
+  
+    models.sequelize.query('ALTER TABLE products ADD CONSTRAINT FK_ProductBrand FOREIGN KEY (brandId) REFERENCES brands(brandId)')
+  .spread((result, metadata) => {
+    console.log('Created FK_ProductBrand');
+  }, (err) => {
+    console.log(err);
+  });

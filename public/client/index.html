@@ -42,7 +42,7 @@
 						<div class="social-icons pull-right">
 							<ul class="nav navbar-nav">
 								<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-								<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+								<!--<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
 								<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
 								<li><a href="#"><i class="fa fa-dribbble"></i></a></li>
 								<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
@@ -97,7 +97,7 @@
 										<div>
 											Xin Chào
 											<img ng-if="!customerHasImg" src="/images/loading/user.png" class="img-circle avatar" alt="avatar" />
-											<img ng-if="customerHasImg" src="" class="img-circle avatar" alt="avatar" />
+											<img ng-if="customerHasImg" src="{{currentSession.avatarLink}}" class="img-circle avatar" alt="avatar" />
 										</div>
 										<i class="fa fa-angle-down pull-right"></i>
 										<div class="pull-right">

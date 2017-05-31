@@ -3,6 +3,7 @@ var CategoryCtrl = require('./CategoryCtrl');
 var ProductTypeCtrl = require('./ProductTypeCtrl');
 var CustomerCtrl = require('./CustomerCtrl');
 var LoginCtrl = require('./LoginCtrl');
+var BrandCtrl = require('./BrandCtrl');
 var async = require('async');
 
 // Products
@@ -28,6 +29,14 @@ module.exports.getOneProduct = (req, res, next) => {
 
 module.exports.getProductFreature = (req, res, next) => {
     ProductCtrl.getProductFreature(req, res, next);
+};
+
+module.exports.getProductNew = (req, res, next) => {
+    ProductCtrl.getProductNew(req, res, next);
+};
+
+module.exports.getProductBestseller= (req, res, next) => {
+    ProductCtrl.getProductBestseller(req, res, next);
 };
 
 // Categories
@@ -113,4 +122,29 @@ module.exports.logoutCustomer = (req, res, next) => {
 
 module.exports.loginGoogleFacebook = (req, res, next) => {
     LoginCtrl.loginGoogleFacebook(req, res, next);
+};
+
+// Brand
+module.exports.getBrands = (req, res, next) => {
+    BrandCtrl.getBrands(req, res, next);
+};
+
+module.exports.createBrand = (req, res, next) => {
+    BrandCtrl.createBrand(req, res, next);
+};
+
+module.exports.updateBrand = (req, res, next) => {
+    BrandCtrl.updateBrand(req, res, next);
+};
+
+module.exports.getOneBrand = (req, res, next) => {
+    BrandCtrl.getOneBrand(req, res, next);
+};
+
+module.exports.deleteBrand = (req, res, next) => {
+    BrandCtrl.deleteBrand(req, res, next);
+};
+
+module.exports.getBrandProduct = (req, res, next) => {
+    BrandCtrl.getBrandProduct(req, res, next);
 };

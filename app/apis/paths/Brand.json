@@ -1,15 +1,15 @@
 {
     "paths": {
-        "/products": {
+        "/brand": {
             "get": {
                 "summary": "Product Types",
                 "description": "This is test Apis Book",
-                "operationId": "getProducts",
+                "operationId": "getBrands",
                 "responses": {
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "#/definitions/Brand"
                             }
                         },
                         "default": {
@@ -24,7 +24,7 @@
             "post": {
                 "summary": "create new coffee",
                 "description": "input a new coffee to insert CoffeeDB",
-                "operationId": "createProduct",
+                "operationId": "createBrand",
                  "parameters": [
                     {
                         "in": "body",
@@ -32,7 +32,7 @@
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "schema": {
-                        "$ref": "#/definitions/Product"
+                        "$ref": "#/definitions/Brand"
                         }
                     }
                 ],
@@ -40,7 +40,7 @@
                     "200": {
                         "description": "template file",
                         "schema": {
-                            "$ref": "#/definitions/Product"
+                            "$ref": "#/definitions/Brand"
                         }
                     },
                     "default": {
@@ -55,7 +55,7 @@
             "put": {
                 "summary": "create new coffee",
                 "description": "input a new coffee to insert CoffeeDB",
-                "operationId": "updateProduct",
+                "operationId": "updateBrand",
                  "parameters": [
                     {
                         "in": "body",
@@ -63,7 +63,7 @@
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "schema": {
-                        "$ref": "#/definitions/Product"
+                        "$ref": "#/definitions/Brand"
                         }
                     }
                 ],
@@ -71,7 +71,7 @@
                     "200": {
                         "description": "template file",
                         "schema": {
-                            "$ref": "#/definitions/Product"
+                            "$ref": "#/definitions/Brand"
                         }
                     },
                     "default": {
@@ -86,11 +86,11 @@
             "delete": {
                 "summary": "Product Types",
                 "description": "This is test Apis Book",
-                "operationId": "deleteProduct",
+                "operationId": "deleteBrand",
                 "parameters": [
                     {
                         "in": "query",
-                        "name": "productId",
+                        "name": "brandId",
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "type": "string"
@@ -100,7 +100,7 @@
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "#/definitions/Brand"
                             }
                         },
                         "default": {
@@ -113,15 +113,15 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             }
         },
-        "/product/one": {
+        "/brand/one": {
             "get": {
                 "summary": "Product Types",
                 "description": "This is test Apis Book",
-                "operationId": "getOneProduct",
+                "operationId": "getOneBrand",
                 "parameters": [
                     {
                         "in": "query",
-                        "name": "productId",
+                        "name": "brandId",
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "type": "string"
@@ -131,91 +131,7 @@
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Product"
-                            }
-                        },
-                        "default": {
-                            "description": "unexpected error",
-                            "schema": {
-                                "$ref": "#/definitions/Error"
-                            }
-                        }
-                    },
-                "x-swagger-router-controller": "DefaultCtrl"
-            }
-        },
-        "/productfreatures": {
-            "get": {
-                "summary": "Product Types",
-                "description": "This is test Apis Book",
-                "operationId": "getProductFreature",
-                "responses": {
-                        "200": {
-                            "description": "template file",
-                            "schema": {
-                                "$ref": "#/definitions/Product"
-                            }
-                        },
-                        "default": {
-                            "description": "unexpected error",
-                            "schema": {
-                                "$ref": "#/definitions/Error"
-                            }
-                        }
-                    },
-                "x-swagger-router-controller": "DefaultCtrl"
-            }
-        },
-        "/productnew": {
-            "get": {
-                "summary": "Product Types",
-                "description": "This is test Apis Book",
-                "operationId": "getProductNew",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "offset",
-                        "description": "Coffee object that needs to be added to the CoffeeDB",
-                        "required": false,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                        "200": {
-                            "description": "template file",
-                            "schema": {
-                                "$ref": "#/definitions/Product"
-                            }
-                        },
-                        "default": {
-                            "description": "unexpected error",
-                            "schema": {
-                                "$ref": "#/definitions/Error"
-                            }
-                        }
-                    },
-                "x-swagger-router-controller": "DefaultCtrl"
-            }
-        },
-        "/productbestseller": {
-            "get": {
-                "summary": "Product Types",
-                "description": "This is test Apis Book",
-                "operationId": "getProductBestseller",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "offset",
-                        "description": "Coffee object that needs to be added to the CoffeeDB",
-                        "required": false,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                        "200": {
-                            "description": "template file",
-                            "schema": {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "#/definitions/Brand"
                             }
                         },
                         "default": {

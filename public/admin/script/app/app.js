@@ -1,4 +1,4 @@
-var app = angular.module("YelaAdminApp", ["ngRoute", "ngResource", "ngFileUpload"]);
+var app = angular.module("YelaAdminApp", ["ngRoute", "ngResource", "ngFileUpload", "ckeditor"]);
 
     app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
         $routeProvider

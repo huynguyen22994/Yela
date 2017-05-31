@@ -38,6 +38,10 @@ module.exports = function(sequelize, Sequelize) {
         quantity: {
             type: Sequelize.INTEGER,
             allowNull: false
+        },
+        brandId: {
+            type: Sequelize.UUID,
+            allowNull: false
         }
     }, {
         charset: 'utf8',

@@ -7,6 +7,7 @@ app.controller('RootCtrl', function($scope, HomeService, jwtHelper, LoginService
     $scope.initialization = () => {
         $scope.getCategories();
         $scope.loadSessionCurrent();
+        $scope.getBrands();
     };
 
     $scope.getCategories = () => {
@@ -34,7 +35,6 @@ app.controller('RootCtrl', function($scope, HomeService, jwtHelper, LoginService
             $scope.currentSession = jwtHelper.decodeToken(sessionStorage.token);
             $scope.FullName = $scope.currentSession.firstName + " " + $scope.currentSession.lastName;
             $scope.customerLogined = true;
-            //console.log($scope.currentSession);
             $scope.customerHasImg = ($scope.currentSession.avatarLink) ? true : false;
         } else {
             $scope.customerLogined = false;
@@ -46,6 +46,15 @@ app.controller('RootCtrl', function($scope, HomeService, jwtHelper, LoginService
             .then((res) => {
                 sessionStorage.token = res.data.token;
                 $scope.loadSessionCurrent();
+            }, (err) => {
+
+            });
+    };
+
+    $scope.getBrands = () => {
+        HomeService.getBrands()
+            .then((res) => {
+                $scope.brands = res.data;
             }, (err) => {
 
             });

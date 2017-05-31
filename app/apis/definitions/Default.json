@@ -38,6 +38,10 @@
                 "quantity": {
                 "type":"integer",
                 "description": "Discribe of Coffee"
+                },
+                "brandId": {
+                "type":"integer",
+                "description": "Discribe of Coffee"
                 }
             }
             },
@@ -120,6 +124,23 @@
                 "description": "Unique identifier representing a specific product for a given latitude & longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles."
                 },
                 "password": {
+                "type": "string",
+                "description": "Name of Coffee."
+                }
+            }
+            },
+        "Brand": {
+            "type": "object",
+            "properties": {
+                "brandId": {
+                "type": "integer",
+                "description": "Unique identifier representing a specific product for a given latitude & longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles."
+                },
+                "name": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "info": {
                 "type": "string",
                 "description": "Name of Coffee."
                 }

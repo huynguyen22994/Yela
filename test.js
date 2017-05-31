@@ -1,17 +1,21 @@
-var models = require('./app/models');
+//var models = require('./app/models');
 
 // models.Category.create({
 //     name: "category 1",
 //     // categoryId: "40875dc0-41c7-11e7-a676-31a1d60a4bcb"
 // })
 
-// models.ProductType.create({
-//     name: "protype 1",
-//     categoryId: "4a3dc760-4202-11e7-b8c2-d303f0b382c0"
+// models.Product.create({
+//     name: "hjfhdf",
+//     price: 32423,
+//     productTypeId: "c06f6b00-4496-11e7-b098-d9bd6ce8b9b6",
+//     productStatus: 'bestseller',
+//     quantity: 23,
+//     brandId: "48236650-4488-11e7-849a-e70a7a69ebb2"
 //     // categoryId: "40875dc0-41c7-11e7-a676-31a1d60a4bcb"
 // })
 
-models.sequelize.sync();
+//models.sequelize.sync();
 
 // models.Category.findAll({
 //     attributes: [['id','categoryId'],['name','name'],],
@@ -72,3 +76,21 @@ models.sequelize.sync();
 //     }, (err) => {
 //         console.log(err);
 // })
+
+//#FE980F
+//#4682B4
+
+// var client = require('twilio')(
+//   "ACb4cd3c07982a1117644a2fcd2f643a2f",
+//   "c41c9e2eb3852cc24ebe48beb6900fcf"
+// );
+ 
+// client.messages.create({
+//   from: "+13082103839",
+//   to: "(+84)0933990004",
+//   body: "You just sent an SMS from Node.js using Twilio!"
+// }, function(err, message) {
+//   if(err) {
+//     console.error(err.message);
+//   }
+// });

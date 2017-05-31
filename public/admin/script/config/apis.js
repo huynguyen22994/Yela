@@ -19,7 +19,10 @@ app.service('apis', function (config) {
     this.createProductType = config.baseUrl + '/api/producttype';
     this.updateProductType = config.baseUrl + '/api/producttype';
     this.deleteProductType = config.baseUrl + '/api/producttype';
-
+    
+    // Brand
+    this.getBrands = config.baseUrl + '/api/brand';
+    
     // UploadFile
     this.uploadProductImg = config.baseUrl + '/api/product/upload';
 });

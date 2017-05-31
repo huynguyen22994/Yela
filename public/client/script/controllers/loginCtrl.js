@@ -2,7 +2,6 @@ app.controller('LoginCtrl', function($scope, LoginService, $window){
     $scope.newCustomer = {};
     $scope.showAuthentication = false;
     $scope.login = {};
-    $scope.errLogin = false;
 
     $scope.register = () => {
         if ($scope.Code == $scope.authenticationCode) {
@@ -48,6 +47,7 @@ app.controller('LoginCtrl', function($scope, LoginService, $window){
                 console.log('sdfdsf');
                 if (res.status == 400 && res.data.err == "account is not exist") {
                     $scope.errLogin = true;
+                    $scope.errLoginGoogle = false;
                 } else {
                     sessionStorage.token = res.data.token;
                     $scope.loadSessionCurrent();
@@ -89,6 +89,8 @@ app.controller('LoginCtrl', function($scope, LoginService, $window){
                                             // email đã tồn tại và phải nhập mật khẩu
                                             //code here
                                             console.log('email đã tồn tại và phải nhập mật khẩu');
+                                            $scope.errLoginGoogle = true;
+                                            $scope.errLogin = false;
                                         } else {
                                             sessionStorage.token = res.data.token;
                                             $scope.loadSessionCurrent();
