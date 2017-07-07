@@ -22,7 +22,18 @@ app.service('apis', function (config) {
     
     // Brand
     this.getBrands = config.baseUrl + '/api/brand';
+    this.createBrand = config.baseUrl + '/api/brand';
+    this.updateBrand = config.baseUrl + '/api/brand';
+    this.deleteBrand = config.baseUrl + '/api/brand';
+    this.getOneBrand = config.baseUrl + '/api/brand/one';
+
+    // Slider
+    this.deleteSlider = config.baseUrl + '/api/slider';
+    this.getSliders = config.baseUrl + '/api/slider';
+    this.getOneSlider = config.baseUrl + '/api/slider/one';
+    this.createSlider = config.baseUrl + '/api/slider';
     
     // UploadFile
     this.uploadProductImg = config.baseUrl + '/api/product/upload';
+    this.uploadSliderImg = config.baseUrl + '/api/slider/upload';
 });

@@ -1,5 +1,12 @@
 //var models = require('./app/models');
 
+    //    models.Product.find({ where: { productId: "03fcd940-45bc-11e7-8605-e17799770357"}, include: [models.Brand]})    
+    //         .then((result) => {
+    //             console.log(result);
+    //         }, (err) => {
+    //             console.log(err);
+    //         });
+
 // models.Category.create({
 //     name: "category 1",
 //     // categoryId: "40875dc0-41c7-11e7-a676-31a1d60a4bcb"
@@ -15,6 +22,7 @@
 //     // categoryId: "40875dc0-41c7-11e7-a676-31a1d60a4bcb"
 // })
 
+// models.sequelize.Slider.sync();
 //models.sequelize.sync();
 
 // models.Category.findAll({
@@ -94,3 +102,28 @@
 //     console.error(err.message);
 //   }
 // });
+
+    // "database": {
+    //     "dbname": "YelaShopDB",
+    //     "username": "huynguyen",
+    //     "password": null,
+    //     "host": "localhost",
+    //     "dialect": "mysql",
+    //     "min": 0,
+    //     "max": 1000,
+    //     "idle": 10000
+    // },
+
+    //     "database": {
+    //     "dbname": "sql12177693",
+    //     "username": "sql12177693",
+    //     "password": "KEgZuyPNAS",
+    //     "host": "sql12.freemysqlhosting.net",
+    //     "dialect": "mysql",
+    //     "min": 0,
+    //     "max": 1000,
+    //     "idle": 10000
+    // },
+
+// var a = "sr";
+// console.log(a.slice(5));

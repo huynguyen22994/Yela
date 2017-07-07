@@ -5,7 +5,7 @@
 							<div class="product-image-wrapper">
 								<div class="single-products">
 										<div class="productinfo text-center">
-											<img src="{{ImgLink}}{{productFreature.linkImg}}" alt="" />
+											<img class="ImgProduct" src="{{productFreature.linkImg}}" alt="" />
 											<h2>{{productFreature.price}} <i>VND</i></h2>
 											<p>{{productFreature.name}}</p>
 											<a href="#" class="btn btn-default add-to-cart"><i class="fa fa-shopping-cart"></i>{{ 'ADD_TO_CART' | translate }}</a>
@@ -35,7 +35,7 @@
 									</ul>
 									<ul class="nav nav-pills nav-justified">
 										<li><a href="#"><i class="fa fa-plus-square"></i>{{ 'ADD_TO_WISHLIST' | translate }}</a></li>
-										<li><a ng-click="setProductId(productFreature.productId)" href="#/productdetail"><i class="fa fa-plus-square"></i>{{ 'PRODUCT_DETAILS' | translate }}</a></li>
+										<li><a ng-click="setProductId(productFreature.productId)" href="#/productdetail/{{productFreature.productId}}"><i class="fa fa-plus-square"></i>{{ 'PRODUCT_DETAILS' | translate }}</a></li>
 									</ul>
 								</div>
 							</div>

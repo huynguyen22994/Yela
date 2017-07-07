@@ -1,6 +1,5 @@
 app.controller('HomeCtrl', function($scope, HomeService, config, Value){
 
-    $scope.ImgLink = config.uploadUrl;
     $scope.offset = 0;
     $scope.countProductNew = 0;
     $scope.offsetProductBestseller = 0;
@@ -10,6 +9,7 @@ app.controller('HomeCtrl', function($scope, HomeService, config, Value){
         $scope.loadProductFreature();
         $scope.loadProductNew();
         $scope.loadProductBestseller();
+        $scope.loadSlider();
     };
 
     $scope.loadProductFreature = () => {
@@ -108,6 +108,15 @@ app.controller('HomeCtrl', function($scope, HomeService, config, Value){
                 if ($scope.offsetProductBestseller == 0) {
                     $scope.leftDisableProBestseller = true;
                 }
+            }, (err) => {
+
+            });
+    };
+
+    $scope.loadSlider = () => {
+        HomeService.getSliderEnable()
+            .then((res) => {
+                $scope.slider = res.data;
             }, (err) => {
 
             });

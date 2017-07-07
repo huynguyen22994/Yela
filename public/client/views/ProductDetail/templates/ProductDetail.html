@@ -8,7 +8,7 @@
 					<div class="product-details"><!--product-details-->
 						<div class="col-sm-5">
 							<div class="view-product">
-								<img src="{{ImgLink}}{{product.linkImg}}" alt="" />
+								<img src="{{product.linkImg}}" alt="" />
 								<h3>{{ 'ZOOM' | translate }}</h3>
 							</div>
 							<div id="similar-product" class="carousel slide" data-ride="carousel">
@@ -45,7 +45,7 @@
 						</div>
 						<div class="col-sm-7">
 							<div class="product-information"><!--/product-information-->
-								<label class="newarrival">fgfdg</label>
+								<label class="newarrival"><h4>{{product.productStattus}}</h4></label>
 								<!--<img src="images/product-details/new.jpg" class="newarrival" alt="" />-->
 								<h2>{{product.name}}</h2>
 								<p class="rating">
@@ -61,7 +61,10 @@
 									<input type="radio" id="starhalf" name="rating" value="half" /><label class="half" for="starhalf" title="Sucks big time - 0.5 stars"></label>
 								</p>
 								<span>
-									<span>{{product.price}} VND</span>
+									
+									<span>Giá Bán: {{product.price}} VND</span>
+								</span>
+								<span>
 									<label>{{ 'QUANTITY' | translate }}:</label>
 									<input type="text" value="3" />
 									<button type="button" class="btn btn-fefault cart">
@@ -69,9 +72,10 @@
 										{{ 'ADD_TO_CART' | translate }}
 									</button>
 								</span>
-								<p><b>{{ 'BRAND' | translate }}:</b> E-SHOPPER</p>
-								<p><b>{{ 'INFO' | translate }}:</b> New</p>
-								<a href=""><img src="images/product-details/share.png" class="share img-responsive"  alt="" /></a>
+								<p><b>{{ 'BRAND' | translate }}:</b> {{product.brandname}}</p>
+								<p><b>{{ 'INFO' | translate }}:</b><i ng-bind-html="product.discribe"></i></p>
+								<div class="fb-like" data-href="https://www.facebook.com/Yela-Shop-1845648855687460/" data-layout="button_count" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div>
+								<div class="fb-save" data-uri="https://www.facebook.com/Yela-Shop-1845648855687460/" data-size="small"></div>
 							</div><!--/product-information-->
 						</div>
 					</div><!--/product-details-->
@@ -91,6 +95,7 @@
 										<li><a href=""><i class="fa fa-clock-o"></i>{{Date | date:'HH:mm'}} </a></li>
 										<li><a href=""><i class="fa fa-calendar-o"></i>{{Date | date:'dd/MM/yyyy'}}  </a></li>
 									</ul>
+									<div class="fb-comments" data-href="https://www.facebook.com/Yela-Shop-1845648855687460/" data-width="780" data-numposts="5"></div>
 									<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
 									<p><b>{{ 'WRITE_REVIEW' | translate }}</b></p>
 									

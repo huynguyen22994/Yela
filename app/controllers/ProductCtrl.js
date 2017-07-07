@@ -154,7 +154,7 @@ module.exports.getProductFreature = (req, res, next) => {
         productStatus: 'prominentest'
     },
     //offset: 10,
-    limit: 6
+    limit: 9
     })
     .then((result) => {
         res.end(JSON.stringify(result));
@@ -184,16 +184,28 @@ module.exports.getProductNew = (req, res, next) => {
 module.exports.getProductBestseller = (req, res, next) => {
     var offset = parseInt(req.query.offset);
     models.Product.findAndCountAll({
-    where: {
-        productStatus: 'bestseller'
-    },
-    offset: offset,
-    limit: 3
+        where: {
+            productStatus: 'bestseller'
+        },
+        offset: offset,
+        limit: 3
     })
-    .then((result) => {
-        res.end(JSON.stringify(result));
-    }, (err) => {
-        res.statusCode = 400;
-        res.end();
-    });
-}
+        .then((result) => {
+            res.end(JSON.stringify(result));
+        }, (err) => {
+            res.statusCode = 400;
+            res.end();
+        });
+};
+
+module.exports.getProductBrandProTypeByProductId = (req, res, next) => {
+    var productId = req.query.productId;
+    models.sequelize.query("SELECT products.*, brands.name as brandname, brands.info as brandinfo, producttypes.name as producttypename FROM products, brands, producttypes WHERE products.brandId = brands.brandId and producttypes.productTypeId = products.productTypeId and products.productId = ?",
+        { replacements: [productId], type: models.sequelize.QueryTypes.SELECT })
+        .spread((result, metadata) => {
+            res.end(JSON.stringify(result));
+        }, (err) => {
+            res.statusCode = 400;
+            res.end();
+        });
+};

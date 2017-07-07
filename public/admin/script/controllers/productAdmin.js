@@ -4,7 +4,7 @@ app.controller('ProductAdminCtrl', function($scope, $timeout, ProductService, Up
     $scope.isUpload = false;
     $scope.newProduct = {};
     $scope.canAdd = false;
-    $scope.ImgLink = config.uploadUrl;
+    $scope.ImgLink = config.ImgLink;
     $scope.Product = {};
     $scope.changeImage = false;
     $scope.optionEnum = {
@@ -69,6 +69,7 @@ app.controller('ProductAdminCtrl', function($scope, $timeout, ProductService, Up
             });
 
             promise.then((data) => {
+                $scope.newProduct.linkImg = $scope.newProduct.linkImg.slice(14);
                 ProductService.createProduct($scope.newProduct)
                     .then((res) => {
                     $scope.newProduct = {};
@@ -146,15 +147,16 @@ app.controller('ProductAdminCtrl', function($scope, $timeout, ProductService, Up
               if (!file.$error) {
                     UploadFile.uploadProductImg(file)
                         .then(function (resp) {
+                            console.log(resp);
                             if (option == 'upload') {
                                 $scope.newProduct.originalImg = resp.data.filename;
                                 $scope.newProduct.linkImg = resp.data.path;
-                                $scope.realImgLink = config.uploadUrl + $scope.newProduct.linkImg;
+                                $scope.realImgLink = $scope.ImgLink + $scope.newProduct.linkImg;
                                 $scope.canAdd = true;
                             } else if (option == 'change') {
                                 $scope.Product.originalImg = resp.data.filename;
                                 $scope.Product.linkImg = resp.data.path;
-                                $scope.realImgLink = config.uploadUrl + $scope.Product.linkImg;
+                                $scope.realImgLink = $scope.ImgLink + $scope.Product.linkImg;
                             }
                             resolve('Success');
                             // $timeout(function() {

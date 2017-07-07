@@ -1,4 +1,4 @@
-app.controller('RootCtrl', function($scope, HomeService, jwtHelper, LoginService){
+app.controller('RootCtrl', function($scope, HomeService, jwtHelper, LoginService, $routeParams){
 
     // get id for product details    
     $scope.productId = '';
@@ -58,6 +58,16 @@ app.controller('RootCtrl', function($scope, HomeService, jwtHelper, LoginService
             }, (err) => {
 
             });
+    };
+
+    $scope.filterImgLink = (imgLink) => {
+        console.log(imgLink);
+        if (imgLink == null && imgLink == '') {
+            return '';
+        } else {
+            let link = imgLink.replace('public\client', '');
+            return link;
+        }
     };
 
 });

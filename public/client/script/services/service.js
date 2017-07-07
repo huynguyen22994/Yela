@@ -77,22 +77,34 @@ app.factory('HomeService', function ($http, apis) {
         });
     };
 
+    var getSliderEnable = () => {
+        return $http({
+            method: 'GET',
+            url: '/api/slider/enable'
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    };
+
     return {
         getCategories: getCategories,
         getProductTypebycategoryId: getProductTypebycategoryId,
         getProductFreature: getProductFreature,
         getBrands: getBrands,
         getProductNew: getProductNew,
-        getProductBestseller: getProductBestseller
+        getProductBestseller: getProductBestseller,
+        getSliderEnable: getSliderEnable
     };
 });
 
 app.factory('DetailService', function ($http, apis) {
 
-    var getOneProduct = (productId) => {
+    var getProductBrandProTypeByProductId = (productId) => {
         return $http({
             method: 'GET',
-            url: apis.getOneProduct,
+            url: '/api/product/brand/producttype/one',
             params: {
                 productId: productId
             }
@@ -105,7 +117,7 @@ app.factory('DetailService', function ($http, apis) {
     };
 
     return {
-        getOneProduct: getOneProduct
+        getProductBrandProTypeByProductId: getProductBrandProTypeByProductId
     };
 });
 

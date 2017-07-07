@@ -6,6 +6,7 @@ app.service('apis', function (config) {
     this.updateProduct = config.baseUrl + '/api/products';
     this.deleteProduct = config.baseUrl + '/api/products';
     this.getProductFreature = config.baseUrl + '/api/productfreatures';
+    this.getProductBrandProTypeByProductId = config.baseUrl + '/api/product/brand/producttype/one';
 
     // Categories
     this.getCategories = config.baseUrl + '/api/category';

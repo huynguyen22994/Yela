@@ -44,42 +44,42 @@ var models = require(__dirname);
 
 // models.sequelize.sync();
 
-models.sequelize.query('ALTER TABLE producttypes ADD CONSTRAINT FK_ProductTypeCategory FOREIGN KEY (categoryId) REFERENCES categories(categoryId)')
+models.sequelize.query('ALTER TABLE ProductTypes ADD CONSTRAINT FK_ProductTypeCategory FOREIGN KEY (categoryId) REFERENCES Categories(categoryId)')
   .spread((result, metadata) => {
     console.log('Created FK_ProductTypeCategory');
   }, (err) => {
     console.log(err);
   });
 
-  models.sequelize.query('ALTER TABLE products ADD CONSTRAINT FK_ProductProductType FOREIGN KEY (productTypeId) REFERENCES producttypes(productTypeId)')
+  models.sequelize.query('ALTER TABLE Products ADD CONSTRAINT FK_ProductProductType FOREIGN KEY (productTypeId) REFERENCES ProductTypes(productTypeId)')
   .spread((result, metadata) => {
     console.log('Created FK_ProductProductType');
   }, (err) => {
     console.log(err);
   });
 
-  models.sequelize.query('ALTER TABLE bills ADD CONSTRAINT FK_BillCustomer FOREIGN KEY (customerId) REFERENCES customers(customerId)')
+  models.sequelize.query('ALTER TABLE Bills ADD CONSTRAINT FK_BillCustomer FOREIGN KEY (customerId) REFERENCES Customers(customerId)')
   .spread((result, metadata) => {
     console.log('Created FK_BillCustomer');
   }, (err) => {
     console.log(err);
   });
   
-  models.sequelize.query('ALTER TABLE billdetails ADD CONSTRAINT FK_BillDetailBills FOREIGN KEY (billId) REFERENCES bills(billId)')
+  models.sequelize.query('ALTER TABLE BillDetails ADD CONSTRAINT FK_BillDetailBills FOREIGN KEY (billId) REFERENCES Bills(billId)')
   .spread((result, metadata) => {
     console.log('Created FK_BillDetailBills');
   }, (err) => {
     console.log(err);
   });
 
-  models.sequelize.query('ALTER TABLE billdetails ADD CONSTRAINT FK_BillDetailProduct FOREIGN KEY (productId) REFERENCES products(productId)')
+  models.sequelize.query('ALTER TABLE BillDetails ADD CONSTRAINT FK_BillDetailProduct FOREIGN KEY (productId) REFERENCES Products(productId)')
   .spread((result, metadata) => {
     console.log('Created FK_BillDetailProduct');
   }, (err) => {
     console.log(err);
   });
   
-    models.sequelize.query('ALTER TABLE products ADD CONSTRAINT FK_ProductBrand FOREIGN KEY (brandId) REFERENCES brands(brandId)')
+    models.sequelize.query('ALTER TABLE Products ADD CONSTRAINT FK_ProductBrand FOREIGN KEY (brandId) REFERENCES Brands(brandId)')
   .spread((result, metadata) => {
     console.log('Created FK_ProductBrand');
   }, (err) => {

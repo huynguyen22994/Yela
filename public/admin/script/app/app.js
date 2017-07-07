@@ -21,6 +21,14 @@ var app = angular.module("YelaAdminApp", ["ngRoute", "ngResource", "ngFileUpload
         .when('/Khach-Hang', {
         templateUrl: 'views/Customer/templates/tables_customer.html',
         controller: 'CustomerAdminCtrl'
+        })
+        .when('/Nhan-Hieu', {
+        templateUrl: 'views/Brand/templates/tables_brand.html',
+        controller: 'BrandAdminCtrl'
+        })        
+        .when('/Thanh-Truot', {
+        templateUrl: 'views/Slider/templates/tables_slider.html',
+        controller: 'SliderAdminCtrl'
         })         
         // removed other routes ... *snip
         .otherwise({

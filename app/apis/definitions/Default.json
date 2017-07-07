@@ -146,6 +146,67 @@
                 }
             }
             },
+        "Slider": {
+            "type": "object",
+            "properties": {
+                "sliderId": {
+                "type": "integer",
+                "description": "Unique identifier representing a specific product for a given latitude & longitude. For example, uberX in San Francisco will have a different product_id than uberX in Los Angeles."
+                },
+                "imgSlider1": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "imgSlider2": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "imgSlider3": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "imgPrice1": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "imgPrice2": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "imgPrice3": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "title1": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "title2": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "title3": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "info1": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "info2": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "info3": {
+                "type": "string",
+                "description": "Name of Coffee."
+                },
+                "status": {
+                "type": "string",
+                "description": "Name of Coffee."
+                }
+            }
+            },
         "Error": {
             "type": "object",
             "properties": {

@@ -243,8 +243,144 @@ app.factory('BrandService', function ($http, apis) {
         });
     };
 
+    var createBrand = (brand) => {
+        return $http({
+            method: 'POST',
+            url: apis.createBrand,
+            data: brand
+        }).then((res) => {
+            return res;
+        },
+        (err) => {
+            return err;
+        })
+    };
+
+    var updateBrand = (brand) => {
+        return $http({
+            method: 'PUT',
+            url: apis.updateBrand,
+            data: brand
+        }).then((res) => {
+            return res;
+        },
+        (err) => {
+            return err;
+        })
+    };
+
+    var getOneBrand = (brandId) => {
+        return $http({
+            method: 'GET',
+            url: apis.getOneBrand,
+            params: {
+                brandId: brandId
+            }
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    };
+
+    var deleteBrand = (brandId) => {
+        return $http({
+            method: 'DELETE',
+            url: apis.deleteBrand,
+            params: {
+                brandId: brandId
+            }
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        })
+    };
+
     return {
-        getBrands: getBrands
+        getBrands: getBrands,
+        createBrand: createBrand,
+        updateBrand: updateBrand,
+        getOneBrand: getOneBrand,
+        deleteBrand: deleteBrand
+    }
+});
+
+app.factory('SliderService', function ($http, apis) {
+
+    var getSliders = () => {
+        return $http({
+            method: 'GET',
+            url: apis.getSliders
+        }).then((res) => {
+            return res;
+        },
+        (err) => {
+            return err;
+        });
+    };
+
+    var createSlider = (slider) => {
+        return $http({
+            method: 'POST',
+            url: apis.createSlider,
+            data: slider
+        }).then((res) => {
+            return res;
+        },
+        (err) => {
+            return err;
+        })
+    };
+
+    // var updateCategory = (category) => {
+    //     console.log(category);
+    //     return $http({
+    //         method: 'PUT',
+    //         url: apis.updateCategory,
+    //         data: category
+    //     }).then((res) => {
+    //         return res;
+    //     },
+    //     (err) => {
+    //         return err;
+    //     })
+    // };
+
+    var getOneSlider = (sliderId) => {
+        return $http({
+            method: 'GET',
+            url: apis.getOneSlider,
+            params: {
+                sliderId: sliderId
+            }
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        });
+    };
+
+    var deleteSlider = (sliderId) => {
+        return $http({
+            method: 'DELETE',
+            url: apis.deleteSlider,
+            params: {
+                sliderId: sliderId
+            }
+        }).then((res) => {
+            return res;
+        }, (err) => {
+            return err;
+        })
+    };
+
+    return {
+        getSliders: getSliders,
+        createSlider: createSlider,
+        // updateCategory: updateCategory,
+        getOneSlider: getOneSlider,
+        deleteSlider: deleteSlider
     }
 });
 
@@ -259,7 +395,17 @@ app.factory('UploadFile', function ($http, apis, Upload) {
         });
     };
 
+    var uploadSliderImg = (file) => {
+        return Upload.upload({
+            url: apis.uploadSliderImg,
+            data: {
+                file: file
+            }
+        });
+    };
+
     return {
-        uploadProductImg: uploadProductImg
+        uploadProductImg: uploadProductImg,
+        uploadSliderImg: uploadSliderImg
     }
 });

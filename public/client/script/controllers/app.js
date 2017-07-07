@@ -1,4 +1,4 @@
-var app = angular.module("YelaApp", ["ngRoute", "ngResource", "pascalprecht.translate", "angular-jwt"]);
+var app = angular.module("YelaApp", ["ngRoute", "ngResource", "pascalprecht.translate", "angular-jwt", "ngSanitize"]);
 
     app.config(['$routeProvider', '$locationProvider', function AppConfig($routeProvider, $locationProvider) {
         $routeProvider
@@ -6,7 +6,7 @@ var app = angular.module("YelaApp", ["ngRoute", "ngResource", "pascalprecht.tran
         templateUrl: 'views/Home/templates/home.html',
         controller:'HomeCtrl'
         })
-        .when('/productdetail', {
+        .when('/productdetail/:id', {
         templateUrl: 'views/ProductDetail/templates/ProductDetail.html',
         controller:'DetailCtrl'
         })

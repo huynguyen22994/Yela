@@ -37,7 +37,7 @@ app.use(function (req, res, next) {
 
 app.use('/', express.static(__dirname + '/public/client'));
 app.use('/admin', express.static(__dirname + '/public/admin'));
-app.use('/upload', express.static(__dirname));
+// app.use('/upload', express.static(__dirname));
 
 app.use('/contact', contact);
 app.use('/api', upload);

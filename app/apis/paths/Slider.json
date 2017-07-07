@@ -1,15 +1,15 @@
 {
     "paths": {
-        "/products": {
+        "/slider": {
             "get": {
                 "summary": "Product Types",
                 "description": "This is test Apis Book",
-                "operationId": "getProducts",
+                "operationId": "getSliders",
                 "responses": {
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "#/definitions/Slider"
                             }
                         },
                         "default": {
@@ -24,7 +24,7 @@
             "post": {
                 "summary": "create new coffee",
                 "description": "input a new coffee to insert CoffeeDB",
-                "operationId": "createProduct",
+                "operationId": "createSilder",
                  "parameters": [
                     {
                         "in": "body",
@@ -32,7 +32,7 @@
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "schema": {
-                        "$ref": "#/definitions/Product"
+                        "$ref": "#/definitions/Slider"
                         }
                     }
                 ],
@@ -40,7 +40,7 @@
                     "200": {
                         "description": "template file",
                         "schema": {
-                            "$ref": "#/definitions/Product"
+                            "$ref": "#/definitions/Slider"
                         }
                     },
                     "default": {
@@ -55,7 +55,7 @@
             "put": {
                 "summary": "create new coffee",
                 "description": "input a new coffee to insert CoffeeDB",
-                "operationId": "updateProduct",
+                "operationId": "updateSilder",
                  "parameters": [
                     {
                         "in": "body",
@@ -63,7 +63,7 @@
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "schema": {
-                        "$ref": "#/definitions/Product"
+                        "$ref": "#/definitions/Slider"
                         }
                     }
                 ],
@@ -71,7 +71,7 @@
                     "200": {
                         "description": "template file",
                         "schema": {
-                            "$ref": "#/definitions/Product"
+                            "$ref": "#/definitions/Slider"
                         }
                     },
                     "default": {
@@ -86,11 +86,11 @@
             "delete": {
                 "summary": "Product Types",
                 "description": "This is test Apis Book",
-                "operationId": "deleteProduct",
+                "operationId": "deleteSlider",
                 "parameters": [
                     {
                         "in": "query",
-                        "name": "productId",
+                        "name": "sliderId",
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "type": "string"
@@ -100,7 +100,7 @@
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "#/definitions/Slider"
                             }
                         },
                         "default": {
@@ -113,15 +113,15 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             }
         },
-        "/product/one": {
+        "/slider/one": {
             "get": {
                 "summary": "Product Types",
                 "description": "This is test Apis Book",
-                "operationId": "getOneProduct",
+                "operationId": "getOneSilder",
                 "parameters": [
                     {
                         "in": "query",
-                        "name": "productId",
+                        "name": "sliderId",
                         "description": "Coffee object that needs to be added to the CoffeeDB",
                         "required": false,
                         "type": "string"
@@ -131,7 +131,7 @@
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "#/definitions/Slider"
                             }
                         },
                         "default": {
@@ -144,109 +144,16 @@
                 "x-swagger-router-controller": "DefaultCtrl"
             }
         },
-        "/productfreatures": {
+        "/slider/enable": {
             "get": {
                 "summary": "Product Types",
                 "description": "This is test Apis Book",
-                "operationId": "getProductFreature",
+                "operationId": "getSilderEnable",
                 "responses": {
                         "200": {
                             "description": "template file",
                             "schema": {
-                                "$ref": "#/definitions/Product"
-                            }
-                        },
-                        "default": {
-                            "description": "unexpected error",
-                            "schema": {
-                                "$ref": "#/definitions/Error"
-                            }
-                        }
-                    },
-                "x-swagger-router-controller": "DefaultCtrl"
-            }
-        },
-        "/productnew": {
-            "get": {
-                "summary": "Product Types",
-                "description": "This is test Apis Book",
-                "operationId": "getProductNew",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "offset",
-                        "description": "Coffee object that needs to be added to the CoffeeDB",
-                        "required": false,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                        "200": {
-                            "description": "template file",
-                            "schema": {
-                                "$ref": "#/definitions/Product"
-                            }
-                        },
-                        "default": {
-                            "description": "unexpected error",
-                            "schema": {
-                                "$ref": "#/definitions/Error"
-                            }
-                        }
-                    },
-                "x-swagger-router-controller": "DefaultCtrl"
-            }
-        },
-        "/productbestseller": {
-            "get": {
-                "summary": "Product Types",
-                "description": "This is test Apis Book",
-                "operationId": "getProductBestseller",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "offset",
-                        "description": "Coffee object that needs to be added to the CoffeeDB",
-                        "required": false,
-                        "type": "integer"
-                    }
-                ],
-                "responses": {
-                        "200": {
-                            "description": "template file",
-                            "schema": {
-                                "$ref": "#/definitions/Product"
-                            }
-                        },
-                        "default": {
-                            "description": "unexpected error",
-                            "schema": {
-                                "$ref": "#/definitions/Error"
-                            }
-                        }
-                    },
-                "x-swagger-router-controller": "DefaultCtrl"
-            }
-        },
-        "/product/brand/producttype/one": {
-            "get": {
-                "summary": "Product Types",
-                "description": "This is test Apis Book",
-                "operationId": "getProductBrandProTypeByProductId",
-                "parameters": [
-                    {
-                        "in": "query",
-                        "name": "productId",
-                        "description": "Coffee object that needs to be added to the CoffeeDB",
-                        "required": false,
-                        "type": "string"
-                    }
-                ],
-                "responses": {
-                        "200": {
-                            "description": "template file",
-                            "schema": {
-                                "$ref": "#/definitions/Product"
+                                "$ref": "#/definitions/Slider"
                             }
                         },
                         "default": {

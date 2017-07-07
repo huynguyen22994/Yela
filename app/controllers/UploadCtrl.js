@@ -17,9 +17,25 @@ var storage = multer.diskStorage({
     }
 });
 
+var storageSlider = multer.diskStorage({
+    destination: configData.storageSliderPath,
+    filename: function (req, file, cb) {
+        console.log(file);
+        crypto.pseudoRandomBytes(16, function (err, raw) {
+            if (err) return cb(err)
+            cb(null, raw.toString('hex') + path.extname(file.originalname))
+        })
+    }
+});
+
 var uploadProductImg = multer({ storage: storage });
+var uploadSliderImg = multer({ storage: storageSlider });
 
 router.post('/product/upload', uploadProductImg.any(), function(req, res){
+    res.end(JSON.stringify(req.files[0]));
+});
+
+router.post('/slider/upload', uploadSliderImg.any(), function (req, res) {
     res.end(JSON.stringify(req.files[0]));
 });
 

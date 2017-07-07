@@ -4,6 +4,7 @@ var ProductTypeCtrl = require('./ProductTypeCtrl');
 var CustomerCtrl = require('./CustomerCtrl');
 var LoginCtrl = require('./LoginCtrl');
 var BrandCtrl = require('./BrandCtrl');
+var SliderCtrl = require('./SliderCtrl');
 var async = require('async');
 
 // Products
@@ -35,8 +36,12 @@ module.exports.getProductNew = (req, res, next) => {
     ProductCtrl.getProductNew(req, res, next);
 };
 
-module.exports.getProductBestseller= (req, res, next) => {
+module.exports.getProductBestseller = (req, res, next) => {
     ProductCtrl.getProductBestseller(req, res, next);
+};
+
+module.exports.getProductBrandProTypeByProductId = (req, res, next) => {
+    ProductCtrl.getProductBrandProTypeByProductId(req, res, next);
 };
 
 // Categories
@@ -147,4 +152,29 @@ module.exports.deleteBrand = (req, res, next) => {
 
 module.exports.getBrandProduct = (req, res, next) => {
     BrandCtrl.getBrandProduct(req, res, next);
+};
+
+// Slider
+module.exports.getSliders = (req, res, next) => {
+    SliderCtrl.getSliders(req, res, next);
+};
+
+module.exports.createSilder = (req, res, next) => {
+    SliderCtrl.createSilder(req, res, next);
+};
+
+module.exports.updateSilder = (req, res, next) => {
+    SliderCtrl.updateSilder(req, res, next);
+};
+
+module.exports.getOneSilder = (req, res, next) => {
+    SliderCtrl.getOneSilder(req, res, next);
+};
+
+module.exports.deleteSlider = (req, res, next) => {
+    SliderCtrl.deleteSlider(req, res, next);
+};
+
+module.exports.getSilderEnable = (req, res, next) => {
+    SliderCtrl.getSilderEnable(req, res, next);
 };
